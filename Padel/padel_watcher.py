@@ -20,7 +20,7 @@ TARGET_COURT_NUMS = {1, 2, 3, 4, 5}
 TARGET_TIMES = ["20:00", "21:00", "22:00"]
 
 # How often to re-check (in seconds)
-CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL", "300"))  # default 5 minutes
+CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL", "300"))
 
 # Discord webhook (put this in your .env)
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "").strip()
@@ -188,7 +188,7 @@ def scrape_svg_openings(page):
 # -----------------------------
 def discord_notify(new_openings):
     """
-    Send a Discord message for JUST the new openings (Courts 1–4).
+    Send a Discord message for JUST the new openings (Courts 1–5).
     """
     if not DISCORD_WEBHOOK_URL:
         return
@@ -328,3 +328,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
