@@ -1,331 +1,343 @@
 import os
-import re
 import time
 import json
-import requests
-from datetime import datetime, timedelta, date
+from datetime import datetime, date, time as dtime, timedelta
 
-from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
+from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
+import requests
 
-# -----------------------------
-# Config
-# -----------------------------
-load_dotenv()  # loads .env values
+# =========================
+#  CONFIG
+# =========================
 
-URL = "https://padeltennisireland.ie/Booking/Grid.aspx"
+load_dotenv()
 
-# Only notify for these courts & times
-TARGET_COURT_NUMS = {1, 2, 3, 4, 5}
-TARGET_TIMES = ["20:00", "21:00", "22:00"]
+BOOKING_URL = "https://padeltennisireland.ie/Booking/Grid.aspx"
 
-# How often to re-check (in seconds)
-CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL", "300"))
+# Path to your Playwright storage state (created by login_once.py)
+STORAGE_STATE = os.getenv("STORAGE_STATE_PATH", "auth.json")
 
-# Discord webhook (put this in your .env)
+# Discord webhook URL (stored in .env)
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "").strip()
 
-# Headless browser (set HEADLESS=0 in .env to watch it in a real window)
-HEADLESS = os.getenv("HEADLESS", "1") != "0"
+# Run headless or with visible browser
+HEADLESS = os.getenv("HEADLESS", "1") == "1"
 
-# Where your login cookies live
-STORAGE_STATE_PATH = os.getenv("STORAGE_STATE_PATH", "auth.json")
+# How often to re-check (in seconds)
+CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL_SECONDS", "300"))  # 5 minutes default
+
+# Courts & times to monitor
+TARGET_COURTS = {
+    1: "Court 1 Indoor",
+    2: "Court 2 Indoor",
+    3: "Court 3 Indoor",
+    4: "Court 4 Indoor",
+    # You can add 5 here if you ever want Court 5 Outdoor again
+}
+
+TARGET_TIMES = [
+    dtime(20, 0),  # 20:00
+    dtime(21, 0),  # 21:00
+    dtime(22, 0),  # 22:00
+]
+
+# 0 = Monday, 1 = Tuesday, 2 = Wednesday, ...
+TARGET_WEEKDAYS = {1, 2}  # Tuesday & Wednesday
 
 
-# -----------------------------
-# Utilities
-# -----------------------------
+# =========================
+#  LOGGING
+# =========================
+
 def log(msg: str) -> None:
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{now}] {msg}")
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[{ts}] {msg}")
 
 
-def safe_goto(page, url: str, wait_until: str = "networkidle", attempts: int = 2):
-    last_err = None
-    for i in range(attempts):
-        try:
-            page.goto(url, wait_until=wait_until, timeout=30000)
-            return
-        except Exception as e:
-            last_err = e
-            log(f"[!] goto({url}) failed (attempt {i+1}/{attempts}): {e}")
-            time.sleep(1.2)
-    if last_err:
-        raise last_err
+# =========================
+#  DISCORD
+# =========================
 
+def send_discord_notification(day: date, openings: list[tuple[dtime, str]]) -> None:
+    """Send a nicely formatted Discord message when openings are found."""
+    if not DISCORD_WEBHOOK_URL:
+        log("[!] DISCORD_WEBHOOK_URL not set – skipping Discord notification.")
+        return
 
-def next_weekday(d: date, target_weekday: int) -> date:
-    """Return the next date with weekday target_weekday (Mon=0 ... Sun=6)."""
-    return d + timedelta((target_weekday - d.weekday()) % 7)
+    # Only include courts 1–4 in notifications as per your requirement
+    filtered = [(t, c) for (t, c) in openings if c in TARGET_COURTS.values()]
+    if not filtered:
+        return
 
+    lines = []
+    for slot_time, court_name in filtered:
+        lines.append(f"- **{slot_time.strftime('%H:%M')}** on **{court_name}**")
 
-# -----------------------------
-# Navigation to correct date / bring SVG grid into view
-# -----------------------------
-def goto_date_ui(page, dt_local: date):
-    log(f"→ Checking date: {dt_local.isoformat()}")
-    safe_goto(page, URL)
-
-    # Scroll towards grid/calendar
-    for _ in range(3):
-        page.mouse.wheel(0, 2000)
-        page.wait_for_timeout(250)
-
-    # Best-effort click on the numeric day in the mini-calendar
-    day_num = str(dt_local.day)
-    clicked = False
-
-    # Try by role
-    for role in ("link", "button", "cell"):
-        try:
-            el = page.get_by_role(role, name=day_num)
-            if el.count() > 0 and el.first.is_visible():
-                el.first.click()
-                clicked = True
-                break
-        except Exception:
-            pass
-
-    # Fallback: literal text
-    if not clicked:
-        try:
-            page.locator(f"text='{day_num}'").first.click(timeout=1200)
-            clicked = True
-        except Exception:
-            pass
-
-    # Give time for SVG to (re)render
-    page.wait_for_timeout(1200)
-
-    # Extra scroll to ensure the SVG is fully in view and laid out
-    for _ in range(3):
-        page.mouse.wheel(0, 2000)
-        page.wait_for_timeout(250)
-
-    # Wait for the SVG if possible (don't hard fail if it’s already on-screen)
-    try:
-        page.wait_for_selector("svg#tablaReserva", timeout=6000)
-    except PWTimeout:
-        log("⚠️ SVG booking grid not detected (continuing best-effort).")
-
-
-# -----------------------------
-# Core: read SVG & decide if a slot is OPEN
-# -----------------------------
-def scrape_svg_openings(page):
-    """
-    Returns list of cells:
-    {
-      time: "20:00",
-      court_label: "Court 1 Indoor",
-      court_num: 1,
-      columna: "1",
-      x, y, w, h,
-      is_open: True/False
-    }
-    Rule: a cell is OPEN if there's NO overlapping red 'rect.evento' over it.
-    """
-    openings = page.evaluate(
-        """
-        () => {
-          const svg = document.querySelector('svg#tablaReserva');
-          if (!svg) return [];
-
-          // Map columna -> "Court X ..." header text
-          const headers = svg.querySelectorAll('#tituloColumna text.cabeceraTxtSup[columna]');
-          const colToCourt = {};
-          headers.forEach(t => {
-            const col = t.getAttribute('columna');
-            const label = (t.textContent || '').trim();
-            if (col) colToCourt[col] = label;
-          });
-
-          // All busy event rectangles (red blocks)
-          const events = Array.from(svg.querySelectorAll('rect.evento')).map(r => {
-            const x = +r.getAttribute('x') || 0;
-            const y = +r.getAttribute('y') || 0;
-            const w = +r.getAttribute('width') || 0;
-            const h = +r.getAttribute('height') || 0;
-            return { x, y, w, h };
-          });
-
-          const overlaps = (a, b) => {
-            return !(a.x + a.w <= b.x || b.x + b.w <= a.x || a.y + a.h <= b.y || b.y + b.h <= a.y);
-          };
-
-          // Candidate cells exist for every time/column
-          const cells = Array.from(svg.querySelectorAll('#CuerpoTabla rect.subDivision.buttonHora')).map(r => {
-            const time  = r.getAttribute('time') || r.getAttribute('datahora') || '';
-            const col   = r.getAttribute('columna') || '';
-            const x     = +r.getAttribute('x') || 0;
-            const y     = +r.getAttribute('y') || 0;
-            const w     = +r.getAttribute('width') || 0;
-            const h     = +r.getAttribute('height') || 0;
-
-            const court_label = colToCourt[col] || ('Col ' + col);
-            const m = court_label.match(/court\\s*(\\d+)/i);
-            const court_num = m ? parseInt(m[1], 10) : null;
-
-            const cellBox = { x, y, w, h };
-            const covered = events.some(evt => overlaps(cellBox, evt));
-
-            return {
-              time, columna: col, x, y, w, h,
-              court_label, court_num,
-              is_open: !covered
-            };
-          });
-
-          return cells;
-        }
-        """
+    content = (
+        f"🎾 **Padel Court Openings Detected** 🎾\n"
+        f"Date: **{day.isoformat()}**\n\n" +
+        "\n".join(lines)
     )
-    return openings or []
 
-
-# -----------------------------
-# Notifications — Discord (phone)
-# -----------------------------
-def discord_notify(new_openings):
-    """
-    Send a Discord message for JUST the new openings (Courts 1–5).
-    """
-    if not DISCORD_WEBHOOK_URL:
-        return
-
-    if not new_openings:
-        return
-
-    lines = [f"🎾 **{o['court']}** available at **{o['time']}** on **{o['date']}**" for o in new_openings]
-    content = "\n".join(lines)
+    payload = {"content": content}
 
     try:
-        r = requests.post(DISCORD_WEBHOOK_URL, json={"content": content}, timeout=10)
-        if r.status_code >= 400:
-            log(f"[!] Discord webhook error {r.status_code}: {r.text[:200]}")
+        resp = requests.post(DISCORD_WEBHOOK_URL, json=payload, timeout=10)
+        if resp.status_code >= 400:
+            log(f"[!] Discord webhook error {resp.status_code}: {resp.text}")
         else:
-            log("📲 Sent Discord notification.")
+            log("[✓] Discord notification sent.")
     except Exception as e:
-        log(f"[!] Discord notify failed: {e}")
+        log(f"[!] Failed to send Discord notification: {e}")
 
 
-# -----------------------------
-# One-day scrape + notify
-# -----------------------------
-def scrape_day(page, dt_local: date, seen_keys: set):
+# =========================
+#  PAGE HELPERS
+# =========================
+
+def _scroll_to_grid(page) -> None:
+    """Scroll down so the SVG booking grid is in view."""
+    page.evaluate("window.scrollTo(0, document.body.scrollHeight);")
+    page.wait_for_timeout(1000)
+
+
+def _goto_date(page, target_date: date) -> None:
     """
-    Scrapes a single date, prints a small status table,
-    and notifies on NEW OPENINGS for Courts 1–4 at 20/21/22.
-    Uses 'seen_keys' to avoid duplicate notifications.
+    Navigate the booking grid to the given date.
+
+    NOTE:
+    -----
+    This is the one piece that can vary a lot depending on how Matchpoint
+    is wired for this site. If you already have a working _goto_date in
+    your existing script, KEEP THAT and ignore this version.
+
+    This stub assumes that loading BOOKING_URL always shows the *current* date
+    and that the site auto-switches when you click the weekday in the little
+    weekly strip. We simplify by:
+    - Reloading the page each time
+    - Clicking the weekday cell that matches the target_date.weekday()
+    - Assuming the grid will then show that date (for the current week / next)
     """
-    goto_date_ui(page, dt_local)
+    # Reload the grid fresh each time to avoid stale state
+    page.goto(BOOKING_URL, wait_until="networkidle")
 
-    try:
-        page.wait_for_selector("svg#tablaReserva", timeout=6000)
-    except PWTimeout:
-        log("⚠️ SVG still not visible; proceeding best-effort.")
-
-    cells = scrape_svg_openings(page)
-    if not cells:
-        log("No cells found in SVG.")
+    # Simple: if today == target_date, nothing else to do
+    today = datetime.now().date()
+    if target_date == today:
         return
 
-    # Build status map for printing + collect open cells
-    want_times = TARGET_TIMES
-    want_courts = TARGET_COURT_NUMS
+    # Try to click in the weekly strip (Mo Tu We Th Fr Sa Su)
+    # This is the same table we saw in earlier debug output.
+    weekday_index = target_date.weekday()  # 0..6 (Mon..Sun)
 
-    # Map court_num -> label for nice output
-    label_by_num = {}
-    for c in cells:
-        n = c.get("court_num")
-        if n in want_courts and c.get("court_label"):
-            label_by_num[n] = c["court_label"]
+    # Locate the calendar table that has weekday headers
+    tables = page.query_selector_all("table")
+    target_table = None
+    for t in tables:
+        header_cells = [c.inner_text().strip() for c in t.query_selector_all("th, td")]
+        if header_cells[:7] == ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]:
+            target_table = t
+            break
 
-    # Prepare status
-    status = {(t, n): "UNKNOWN" for t in want_times for n in want_courts}
+    if not target_table:
+        log("⚠️ Could not find weekday header table to change date.")
+        return
 
-    # Fill from first matching cell for each (t,n)
-    seen_pair = set()
-    for c in cells:
-        t = c.get("time")
-        n = c.get("court_num")
-        if t in want_times and n in want_courts:
-            key = (t, n)
-            if key in seen_pair:
-                continue
-            seen_pair.add(key)
-            status[key] = "OPEN" if c.get("is_open") else "BOOKED"
-
-    # Pretty print per time
-    for t in want_times:
-        print(f"\n== {t} ==")
-        for n in sorted(want_courts):
-            label = label_by_num.get(n, f"Court {n}")
-            print(f"{label:18} : {status[(t, n)]}")
-
-    # Build just-open list (for Courts 1–4)
-    newly_open = []
-    for (t, n), s in status.items():
-        if s == "OPEN":
-            court_label = label_by_num.get(n, f"Court {n}")
-            # Unique key per date-time-court
-            key = (dt_local.isoformat(), t, n)
-            if key not in seen_keys:
-                seen_keys.add(key)
-                newly_open.append({
-                    "date": dt_local.isoformat(),
-                    "time": t,
-                    "court": court_label
-                })
-
-    # Notify via Discord for NEW openings
-    discord_notify(newly_open)
-
-
-# -----------------------------
-# Main loop — runs forever
-# -----------------------------
-def main():
-    if not DISCORD_WEBHOOK_URL:
-        log("⚠️ No DISCORD_WEBHOOK_URL set. Add it to your .env to get phone notifications.")
-
-    p = sync_playwright().start()
-    browser = p.chromium.launch(headless=HEADLESS)
-    context = browser.new_context(storage_state=STORAGE_STATE_PATH)
-    page = context.new_page()
-
-    log("🎾 Starting Padel Watcher (Ctrl+C to stop)\n")
-
-    # Keep track of what we've already notified for (avoid spam)
-    seen_keys = set()
-
-    try:
-        while True:
-            today = date.today()
-            next_tue = next_weekday(today, 1)  # Tue
-            next_wed = next_weekday(today, 2)  # Wed
-
-            for d in [next_tue, next_wed]:
-                try:
-                    scrape_day(page, d, seen_keys)
-                except Exception as e:
-                    log(f"[!] Error checking {d}: {e}")
-                print("-" * 50)
-
-            log(f"Sleeping {CHECK_INTERVAL//60} min...\n")
-            time.sleep(CHECK_INTERVAL)
-
-    except KeyboardInterrupt:
-        log("Stopping watcher…")
-    finally:
+    # Click corresponding weekday cell in the body (best-effort; assumes first row)
+    body_cells = target_table.query_selector_all("tbody td")
+    if len(body_cells) >= 7:
         try:
-            context.close()
+            body_cells[weekday_index].click()
+            page.wait_for_timeout(1500)
+        except Exception as e:
+            log(f"⚠️ Failed to click weekday cell: {e}")
+    else:
+        log("⚠️ Not enough cells in weekday table to select weekday.")
+
+
+def _get_svg(page):
+    svg = page.query_selector("svg#tablaReserva")
+    if not svg:
+        log("⚠️ Could not find SVG booking grid on this date.")
+    return svg
+
+
+def _is_cell_open(svg, target_time: dtime, col_idx: int) -> bool:
+    """
+    Determine if a given (time, court column) is free.
+
+    Logic:
+      1) Find the button rect with class 'subDivision plantilla buttonHora'
+         and attributes:
+            - time="HH:MM"
+            - columna="<col_idx>"
+      2) Get its bounding box.
+      3) Look at all rect.evento (booked blocks) and see if any overlap
+         that bounding box significantly.
+    """
+    time_str = target_time.strftime("%H:%M")
+
+    cell = svg.query_selector(
+        f"rect.subDivision.buttonHora[time='{time_str}'][columna='{col_idx}']"
+    )
+    if not cell:
+        # If there is no booking button at all, treat as not bookable
+        return False
+
+    cell_box = cell.bounding_box()
+    if not cell_box:
+        return False
+
+    cx, cy, cw, ch = (
+        cell_box["x"],
+        cell_box["y"],
+        cell_box["width"],
+        cell_box["height"],
+    )
+
+    # Helper for overlap check
+    def overlaps(a, b) -> bool:
+        ax, ay, aw, ah = a
+        bx, by, bw, bh = b
+        x_overlap = max(0, min(ax + aw, bx + bw) - max(ax, bx))
+        y_overlap = max(0, min(ay + ah, by + bh) - max(ay, by))
+        return x_overlap > 5 and y_overlap > 5
+
+    # Check all event rects (booked blocks)
+    events = svg.query_selector_all("rect.evento")
+    for e in events:
+        e_box = e.bounding_box()
+        if not e_box:
+            continue
+        ex, ey, ew, eh = (
+            e_box["x"],
+            e_box["y"],
+            e_box["width"],
+            e_box["height"],
+        )
+        if overlaps((cx, cy, cw, ch), (ex, ey, ew, eh)):
+            # There is a booked event overlapping this slot
+            return False
+
+    # No overlapping event found → appears open
+    return True
+
+
+# =========================
+#  DATE GENERATION
+# =========================
+
+def generate_target_dates() -> list[date]:
+    """
+    Return all Tuesday/Wednesday dates within the next 2 weeks (rolling window).
+
+    If today is Wednesday 2025-11-12, this will typically return:
+      - 2025-11-12
+      - 2025-11-18
+      - 2025-11-19
+      - 2025-11-25
+      - 2025-11-26
+    """
+    today = datetime.now().date()
+    dates: list[date] = []
+
+    for offset in range(0, 15):  # today + 0..14 days
+        d = today + timedelta(days=offset)
+        if d.weekday() in TARGET_WEEKDAYS:
+            dates.append(d)
+
+    return dates
+
+
+# =========================
+#  SCRAPING A SINGLE DAY
+# =========================
+
+def scrape_day(page, target_date: date) -> list[tuple[dtime, str]]:
+    """
+    Return a list of (opening_time, court_name) that are open for target_date.
+    Also prints [OPEN]/[BOOKED] lines for debugging.
+    """
+    log(f"→ Checking date: {target_date}")
+
+    # Work out if this is "today" so we can ignore times in the past
+    now = datetime.now()
+    is_today = (target_date == now.date())
+
+    _goto_date(page, target_date)
+    page.wait_for_timeout(1500)
+    _scroll_to_grid(page)
+
+    svg = _get_svg(page)
+    if not svg:
+        return []
+
+    openings: list[tuple[dtime, str]] = []
+
+    for opening_time in TARGET_TIMES:
+        # Skip past times for today
+        if is_today:
+            slot_dt = datetime.combine(target_date, opening_time)
+            if slot_dt <= now:
+                continue
+
+        for col_idx, court_name in TARGET_COURTS.items():
+            try:
+                is_open = _is_cell_open(svg, opening_time, col_idx)
+            except Exception as e:
+                log(f"⚠️ Error checking {opening_time} {court_name}: {e}")
+                continue
+
+            if is_open:
+                openings.append((opening_time, court_name))
+                log(f"[OPEN]   {target_date}  {opening_time.strftime('%H:%M')}  {court_name}")
+            else:
+                log(f"[BOOKED] {target_date}  {opening_time.strftime('%H:%M')}  {court_name}")
+
+    if not openings:
+        log("No target openings on this date.")
+    return openings
+
+
+# =========================
+#  MAIN LOOP
+# =========================
+
+def main():
+    log("Starting padel watcher… (Stop with Ctrl+C)")
+    log(f"Headless: {HEADLESS}, Check interval: {CHECK_INTERVAL}s")
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=HEADLESS)
+        context = browser.new_context(storage_state=STORAGE_STATE)
+        page = context.new_page()
+
+        # Initial load to make sure cookies/auth are valid
+        log(f"Opening booking page: {BOOKING_URL}")
+        page.goto(BOOKING_URL, wait_until="networkidle")
+        _scroll_to_grid(page)
+
+        try:
+            while True:
+                target_dates = generate_target_dates()
+
+                for target_date in target_dates:
+                    openings = scrape_day(page, target_date)
+
+                    # Only notify if there are openings (and only courts 1–4
+                    # will be included in the message inside the function).
+                    if openings:
+                        send_discord_notification(target_date, openings)
+
+                log(f"Sleeping for {CHECK_INTERVAL} seconds…")
+                time.sleep(CHECK_INTERVAL)
+
+        except KeyboardInterrupt:
+            log("Received Ctrl+C – stopping watcher.")
+        finally:
             browser.close()
-        except Exception:
-            pass
-        p.stop()
 
 
 if __name__ == "__main__":
     main()
-
