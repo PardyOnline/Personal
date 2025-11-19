@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Serpent Hand Chronicle</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-panel: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent: #d4af37; /* Gold */
+            --accent-hover: #f1c40f;
+            --danger: #e74c3c;
+            --magic: #9b59b6;
+        }
+
+        body {
+            font-family: 'Cinzel', serif; /* Fantasy header font */
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3 { font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+        p { font-family: 'Lato', sans-serif; color: var(--text-muted); }
+        
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.transparenttextures.com/patterns/black-scales.png');
+            background-color: #0a0a0a;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 2rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+        }
+
+        .stat-value { font-size: 1.5rem; color: #fff; display: block; font-weight: bold; }
+        .stat-label { font-size: 0.8rem; text-transform: uppercase; color: var(--accent); }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--accent);
+        }
+
+        .arc-card {
+            background: var(--bg-panel);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        .arc-card:hover { transform: translateX(5px); }
+
+        .arc-card::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 1.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+        }
+
+        .arc-title { font-size: 1.2rem; margin-bottom: 0.5rem; color: #fff; }
+        .arc-status { 
+            font-family: sans-serif; 
+            font-size: 0.7rem; 
+            background: #27ae60; 
+            color: white; 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        
+        .deeds-list {
+            margin-top: 1rem;
+            background: rgba(0,0,0,0.2);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        .deeds-list li { margin-bottom: 0.5rem; font-size: 0.9rem; font-family: sans-serif; }
+        .deed-title { color: var(--accent); font-weight: bold; }
+
+        /* Sidebar (Party & Graveyard) */
+        .sidebar-section {
+            background: var(--bg-panel);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .character-card {
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .char-name { font-weight: bold; color: #fff; display: block; }
+        .char-class { font-size: 0.8rem; color: var(--accent); }
+        .char-hp { color: #e74c3c; font-weight: bold; }
+
+        .graveyard-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; font-family: sans-serif; }
+        .graveyard-table th { text-align: left; color: var(--accent); padding-bottom: 0.5rem; border-bottom: 1px solid #444; }
+        .graveyard-table td { padding: 0.5rem 0; color: #888; border-bottom: 1px solid #333; }
+        .cause-death { color: var(--danger); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #333;
+            color: #666;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+    <!-- Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>The Serpent Hand Saga</h1>
+    <p>The Chronicles of Orion, Borin, and Lyra</p>
+
+    <div class="stats-bar">
+        <div class="stat-box">
+            <span class="stat-value">Level 7</span>
+            <span class="stat-label">Final Level</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-value">5,350</span>
+            <span class="stat-label">Gold Acquired</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-value">Saved</span>
+            <span class="stat-label">City Status</span>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <!-- Main Timeline -->
+    <main class="timeline">
+        <h2>Campaign Timeline</h2>
+
+        <div class="arc-card">
+            <div class="arc-title">Arc 1: The Serpent Hand <span class="arc-status">COMPLETED</span></div>
+            <p>The investigation of the Whispering Stones revealed a cult attempting to raise a Lich. The party pursued the cultists across the region.</p>
+            <div class="deeds-list">
+                <ul>
+                    <li><span class="deed-title">The Usurper:</span> Orion dominating the Crown's will to turn a Bone Golem against the Matron.</li>
+                    <li><span class="deed-title">The Price of Peace:</span> Trading the Crown of Bones to Drider Queen Vlask to ensure the destruction of the Matron's phylactery.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="arc-card">
+            <div class="arc-title">Arc 2: The City of Shadows <span class="arc-status">COMPLETED</span></div>
+            <p>A political thriller involving the Thieves' Guild and a bomb hidden in the Industrial District.</p>
+            <div class="deeds-list">
+                <ul>
+                    <li><span class="deed-title">The Defenestration:</span> Orion shattering a tavern window to escape a 9-vs-1 ambush.</li>
+                    <li><span class="deed-title">The Great Lie:</span> Deceiving High Wizard Thalassar to keep the Arcane Cores secret.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="arc-card">
+            <div class="arc-title">Arc 3: The Fracture <span class="arc-status">COMPLETED</span></div>
+            <p>The secret repair of the City Shield and the betrayal of the High Wizard.</p>
+            <div class="deeds-list">
+                <ul>
+                    <li><span class="deed-title">The Guardian:</span> Sacrificing the immense power of the Arcane Cores to permanently fix the city shield.</li>
+                    <li><span class="deed-title">The Gag:</span> Orion placed under a 5th-level Geas to hide Thalassar's negligence.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="arc-card">
+            <div class="arc-title">Arc 4: The Spider's Shadow <span class="arc-status">COMPLETED</span></div>
+            <p>Queen Vlask returns with the Crown of Bones to conquer the surface.</p>
+            <div class="deeds-list">
+                <ul>
+                    <li><span class="deed-title">The Lightning Rod:</span> Orion acting as a conduit for necrotic magic to free the Wizard.</li>
+                    <li><span class="deed-title">The Shattered Crown:</span> Destroying the artifact in the Grand Plaza to prevent tyranny.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="arc-card">
+            <div class="arc-title">Arc 5: The Wizard's War <span class="arc-status">COMPLETED</span></div>
+            <p>The final revolution against Archmage Thalassar.</p>
+            <div class="deeds-list">
+                <ul>
+                    <li><span class="deed-title">The Mind-Killer:</span> Orion breaking the Geas within his own mindscape.</li>
+                    <li><span class="deed-title">The Avalanche:</span> Bull-rushing a Wyvern off an icy bridge.</li>
+                    <li><span class="deed-title">The Icarus Strike:</span> The final aerial takedown of the flying Archmage.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="arc-card" style="border-left-color: #fff;">
+            <div class="arc-title">Epilogue: The Grey Dawn</div>
+            <p>Orion refused a seat on the Council, returned the Signet of Authority, and left Emberwood a wealthy, free adventurer.</p>
+        </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside>
+        <div class="sidebar-section">
+            <h3>The Party</h3>
+            <div class="character-card">
+                <div>
+                    <span class="char-name">Orion</span>
+                    <span class="char-class">Elf Rogue (Mastermind)</span>
+                </div>
+                <span class="char-hp">48 HP</span>
+            </div>
+            <div class="character-card">
+                <div>
+                    <span class="char-name">Borin Stonehand</span>
+                    <span class="char-class">Dwarf Fighter</span>
+                </div>
+                <span class="char-hp">42 HP</span>
+            </div>
+            <div class="character-card">
+                <div>
+                    <span class="char-name">Sister Lyra</span>
+                    <span class="char-class">Human Cleric</span>
+                </div>
+                <span class="char-hp">36 HP</span>
+            </div>
+            <div class="character-card">
+                <div>
+                    <span class="char-name">Kaelen</span>
+                    <span class="char-class">Gnome Artificer</span>
+                </div>
+                <span class="char-hp">Ally</span>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Hall of the Fallen</h3>
+            <table class="graveyard-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Fate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>The Pale Matron</td>
+                        <td class="cause-death">Soul Destroyed</td>
+                    </tr>
+                    <tr>
+                        <td>Master of the Coil</td>
+                        <td class="cause-death">Slain in Combat</td>
+                    </tr>
+                    <tr>
+                        <td>Wight Champion</td>
+                        <td class="cause-death">Vaporized</td>
+                    </tr>
+                    <tr>
+                        <td>Queen Vlask</td>
+                        <td class="cause-death">Executed</td>
+                    </tr>
+                    <tr>
+                        <td>Thalassar</td>
+                        <td style="color: #f39c12">Exiled</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Lost Artifacts</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 5px;">👑 <strong>Crown of Bones:</strong> Shattered</p>
+            <p style="font-size: 0.9rem; margin-bottom: 5px;">💎 <strong>Arcane Cores:</strong> Consumed</p>
+            <p style="font-size: 0.9rem; margin-bottom: 5px;">📖 <strong>Malakor's Journal:</strong> Burned</p>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <p>Generated for The Serpent Hand Campaign | End of Session</p>
+</footer>
+
+</body>
+</html>
