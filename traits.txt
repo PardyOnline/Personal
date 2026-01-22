@@ -1,0 +1,53 @@
+Trait Name,Game Effect
+Power Puncher,"High chance to ROCK opponent on clean hits. (Replaces: H-Bomb, Left Hand, Heavy Hands)"
+Sniper,"High accuracy, lower volume. Great at countering aggressive opponents. (Replaces: Counter Striker, Technician)"
+Volume Striker,"Throws more strikes per minute, but less power. Wins decisions. (Replaces: Zombie, Boxer, Diaz Bros)"
+Wrestler,"AI prefers Takedowns over Striking. Gains ""Control Time"" points easily. (Replaces: Grinder, Smesh)"
+Sub Specialist,"When on the ground, aggressively attempts submissions instead of striking. (Replaces: Guard Master, Twister)"
+Iron Chin,"Reduces KO chance significantly when hit by big shots. (Replaces: Zombie, Samoan)"
+Glass Cannon,"+15% Damage Output, but -20% Chin Health. Kill or be killed. (Replaces: Overeem)"
+Cardio Machine,"No stat penalty in Rounds 3, 4, or 5. (Replaces: Cain Cardio)"
+Fast Starter,"+10% to all stats in Round 1. -10% in Round 3. (Replaces: Blitz, McGregor)"
+Finisher,"If opponent is ""Rocked,"" 90% chance to finish the fight immediately."
+
+Trait Name,Game Effect
+Dirty Fighter,Random chance to Eye Poke or Groin Strike. Lowers opponent stats but risks Point Deduction. (Replaces: Eye Poker)
+Weight Bully,"Enters cage with size advantage (Strength), but 20% risk of ""Missed Weight"" event before fight."
+
+Trait Name,Game Effect
+Company Man,Will accept Short Notice fights. Never rejects an opponent.
+Trouble Maker,"10% chance of a ""Police/Legal"" event disrupting training camp."
+Showman,"Wins or loses, their ""Star Power"" always goes up. (Replaces: Taunter, Flashy)"
+Pull-Out Merchant,"High chance of ""Minor Injury"" event during camp."
+
+Trait Name,Game Effect
+Submission Magician,+10 to Sub Offense. Can submit from bottom (Guard) as well as top.
+RNC Specialist,"The Backpacker. If this fighter gets the back, they have a 90% chance to lock the RNC immediately. (e.g., Demian Maia, BJ Penn)."
+Guillotine King,"The Counter. High chance to trigger a sub attempt immediately after stuffing a takedown. (e.g., Urijah Faber, Pedro Munhoz)."
+Leg Lock Specialist,"The Danger. Can trigger a submission attempt from standing (Imanari Roll). High injury risk for opponent. (e.g., Palhares, Ryan Hall)."
+Arm Hunter,"Bonus to Armbars and Kimuras. Transitions quickly from side control. (e.g., Ronda Rousey)."
+Triangle Master,"Deadly off their back. If taken down, they become more dangerous, not less. (e.g., Paul Craig, Nate Diaz)."
+Wet Blanket,"(Wrestler) Zero interest in submissions. Uses ""Control Time"" to drain opponent's stamina bar rapidly."
+
+Trait Name,Game Effect
+Sniper,"Low volume, High accuracy. Massive bonus to hitting opponents who have ""Low Stamina."""
+Power Puncher,"Every clean hit has a small % chance to cause an instant ""Rocked"" state, regardless of chin health."
+Volume Striker,"Throws 2x more strikes than average. Wins decisions, but susceptible to counters."
+Head Hunter,"Ignores body/legs. High KO chance, but drains their own stamina faster (swinging for fences)."
+Leg Kicker,"Low damage, but slows the opponent down. After 10 leg kicks, opponent loses ""Movement"" (TDD drops)."
+Glass Cannon,"Massive Damage output, but extremely fragile Chin."
+Iron Chin,"Can absorb 30% more damage before entering ""Rocked"" state."
+
+Trait Name,Game Effect
+Cardio Machine,Fighter enters Rounds 4 and 5 with full stamina bar.
+Fast Starter,Huge stat boost in Round 1. Severe stat drop in Round 3.
+Diesel Engine,Stats increase as the fight goes on. Round 3 is their strongest round.
+Dog,"If losing on the scorecards in R3/R5, gains a ""Desperation"" boost to Aggression and Power."
+Fragile,"High chance of ""Injury Event"" during the fight (e.g., shoulder pop, broken hand)."
+
+Trait Name,Game Effect
+Company Man,Accepts short notice fights. Morale stays high even with tough matchmaking.
+Diva,Refuses fights unless Main Event or Co-Main. Loses morale easily.
+Weight Bully,"Size advantage in cage, but high risk of ""Missed Weight"" event."
+Trouble Maker,"Risk of arrest/suspension events. Generates high ""Hype"" (Fans love bad boys)."
+Clean Cut,"Zero risk of trouble events. Low ""Hype"" generation (Boring)."

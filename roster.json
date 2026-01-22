@@ -1,0 +1,2806 @@
+[
+    {
+        "id": 1,
+        "name": "Junior dos Santos",
+        "nickname": "Cigano",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 96,
+            "grappling": 65,
+            "tdd": 98,
+            "sub_off": 50,
+            "sub_def": 80,
+            "chin": 95,
+            "cardio": 88
+        },
+        "traits": [
+            "Power Puncher",
+            "Head Hunter",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 15,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": true,
+        "injury_months": 0,
+        "popularity": 92,
+        "age": 28
+    },
+    {
+        "id": 13,
+        "name": "Jon Jones",
+        "nickname": "Bones",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 94,
+            "grappling": 96,
+            "tdd": 99,
+            "sub_off": 95,
+            "sub_def": 98,
+            "chin": 98,
+            "cardio": 95
+        },
+        "traits": [
+            "Dirty Fighter",
+            "Sniper",
+            "Trouble Maker"
+        ],
+        "record": {
+            "wins": 17,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": true,
+        "injury_months": 0,
+        "popularity": 96,
+        "age": 25
+    },
+    {
+        "id": 25,
+        "name": "Anderson Silva",
+        "nickname": "The Spider",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 99,
+            "grappling": 75,
+            "tdd": 80,
+            "sub_off": 85,
+            "sub_def": 80,
+            "chin": 92,
+            "cardio": 90
+        },
+        "traits": [
+            "Sniper",
+            "Head Hunter",
+            "Showman"
+        ],
+        "record": {
+            "wins": 33,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": true,
+        "injury_months": 0,
+        "popularity": 99,
+        "age": 37
+    },
+    {
+        "id": 37,
+        "name": "Georges St-Pierre",
+        "nickname": "GSP",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 99,
+            "tdd": 99,
+            "sub_off": 80,
+            "sub_def": 98,
+            "chin": 89,
+            "cardio": 99
+        },
+        "traits": [
+            "Wrestler",
+            "Wet Blanket",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 22,
+            "losses": 3,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 98,
+        "age": 31
+    },
+    {
+        "id": 52,
+        "name": "Benson Henderson",
+        "nickname": "Smooth",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 86,
+            "grappling": 90,
+            "tdd": 88,
+            "sub_off": 85,
+            "sub_def": 98,
+            "chin": 90,
+            "cardio": 98
+        },
+        "traits": [
+            "Cardio Machine",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 18,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": true,
+        "injury_months": 0,
+        "popularity": 85,
+        "age": 29
+    },
+    {
+        "id": 66,
+        "name": "Jose Aldo",
+        "nickname": "Junior",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 97,
+            "grappling": 75,
+            "tdd": 99,
+            "sub_off": 60,
+            "sub_def": 90,
+            "chin": 95,
+            "cardio": 85
+        },
+        "traits": [
+            "Leg Kicker",
+            "Sniper",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 21,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": true,
+        "injury_months": 0,
+        "popularity": 90,
+        "age": 26
+    },
+    {
+        "id": 77,
+        "name": "Dominick Cruz",
+        "nickname": "The Dominator",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 92,
+            "tdd": 95,
+            "sub_off": 60,
+            "sub_def": 90,
+            "chin": 88,
+            "cardio": 98
+        },
+        "traits": [
+            "Volume Striker",
+            "Cardio Machine"
+        ],
+        "record": {
+            "wins": 19,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": true,
+        "injury_months": 0,
+        "popularity": 86,
+        "age": 27
+    },
+    {
+        "id": 87,
+        "name": "Demetrious Johnson",
+        "nickname": "Mighty Mouse",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 92,
+            "tdd": 90,
+            "sub_off": 90,
+            "sub_def": 95,
+            "chin": 90,
+            "cardio": 99
+        },
+        "traits": [
+            "Cardio Machine",
+            "Submission Magician",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 16,
+            "losses": 2,
+            "draws": 1
+        },
+        "is_champion": true,
+        "injury_months": 0,
+        "popularity": 80,
+        "age": 26
+    },
+    {
+        "id": 3,
+        "name": "Alistair Overeem",
+        "nickname": "The Reem",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 97,
+            "grappling": 75,
+            "tdd": 80,
+            "sub_off": 75,
+            "sub_def": 70,
+            "chin": 65,
+            "cardio": 60
+        },
+        "traits": [
+            "Glass Cannon",
+            "Power Puncher",
+            "Trouble Maker"
+        ],
+        "record": {
+            "wins": 36,
+            "losses": 11,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 94,
+        "age": 32
+    },
+    {
+        "id": 33,
+        "name": "Hector Lombard",
+        "nickname": "Lightning",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 85,
+            "tdd": 90,
+            "sub_off": 60,
+            "sub_def": 80,
+            "chin": 95,
+            "cardio": 70
+        },
+        "traits": [
+            "Fast Starter",
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 31,
+            "losses": 3,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 34
+    },
+    {
+        "id": 50,
+        "name": "Nate Marquardt",
+        "nickname": "The Great",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 85,
+            "tdd": 85,
+            "sub_off": 70,
+            "sub_def": 80,
+            "chin": 80,
+            "cardio": 80
+        },
+        "traits": [
+            "Finisher"
+        ],
+        "record": {
+            "wins": 33,
+            "losses": 10,
+            "draws": 2
+        },
+        "is_champion": true,
+        "injury_months": 0,
+        "popularity": 81,
+        "age": 33
+    },
+    {
+        "id": 60,
+        "name": "Clay Guida",
+        "nickname": "The Carpenter",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 75,
+            "grappling": 88,
+            "tdd": 85,
+            "sub_off": 60,
+            "sub_def": 85,
+            "chin": 95,
+            "cardio": 99
+        },
+        "traits": [
+            "Cardio Machine",
+            "Wrestler"
+        ],
+        "record": {
+            "wins": 29,
+            "losses": 13,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 84,
+        "age": 31
+    },
+    {
+        "id": 73,
+        "name": "Dennis Siver",
+        "nickname": "",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 86,
+            "grappling": 75,
+            "tdd": 80,
+            "sub_off": 60,
+            "sub_def": 80,
+            "chin": 88,
+            "cardio": 85
+        },
+        "traits": [
+            "Leg Kicker"
+        ],
+        "record": {
+            "wins": 21,
+            "losses": 8,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 76,
+        "age": 33
+    },
+    {
+        "id": 78,
+        "name": "Renan Barao",
+        "nickname": "The Baron",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 88,
+            "tdd": 95,
+            "sub_off": 85,
+            "sub_def": 90,
+            "chin": 90,
+            "cardio": 92
+        },
+        "traits": [
+            "Leg Kicker",
+            "Finisher"
+        ],
+        "record": {
+            "wins": 29,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 83,
+        "age": 25
+    },
+    {
+        "id": 93,
+        "name": "John Lineker",
+        "nickname": "Hands of Stone",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 60,
+            "tdd": 70,
+            "sub_off": 50,
+            "sub_def": 70,
+            "chin": 92,
+            "cardio": 80
+        },
+        "traits": [
+            "Power Puncher",
+            "Weight Bully"
+        ],
+        "record": {
+            "wins": 19,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 72,
+        "age": 22
+    },
+    {
+        "id": 98,
+        "name": "Gegard Mousasi",
+        "nickname": "The Dreamcatcher",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 85,
+            "tdd": 85,
+            "sub_off": 85,
+            "sub_def": 90,
+            "chin": 95,
+            "cardio": 90
+        },
+        "traits": [
+            "Sniper",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 33,
+            "losses": 3,
+            "draws": 2
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 85,
+        "age": 27
+    },
+    {
+        "id": 10,
+        "name": "Stefan Struve",
+        "nickname": "Skyscraper",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 82,
+            "grappling": 88,
+            "tdd": 60,
+            "sub_off": 90,
+            "sub_def": 80,
+            "chin": 70,
+            "cardio": 80
+        },
+        "traits": [
+            "Triangle Master",
+            "Glass Cannon"
+        ],
+        "record": {
+            "wins": 25,
+            "losses": 5,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 78,
+        "age": 24
+    },
+    {
+        "id": 19,
+        "name": "Quinton Jackson",
+        "nickname": "Rampage",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 80,
+            "tdd": 85,
+            "sub_off": 50,
+            "sub_def": 75,
+            "chin": 95,
+            "cardio": 80
+        },
+        "traits": [
+            "Power Puncher",
+            "Trouble Maker"
+        ],
+        "record": {
+            "wins": 32,
+            "losses": 10,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 4,
+        "popularity": 93,
+        "age": 34
+    },
+    {
+        "id": 34,
+        "name": "Rich Franklin",
+        "nickname": "Ace",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 75,
+            "tdd": 80,
+            "sub_off": 60,
+            "sub_def": 80,
+            "chin": 80,
+            "cardio": 88
+        },
+        "traits": [
+            "Volume Striker",
+            "Company Man"
+        ],
+        "record": {
+            "wins": 29,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 87,
+        "age": 38
+    },
+    {
+        "id": 38,
+        "name": "Carlos Condit",
+        "nickname": "The Natural Born Killer",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 94,
+            "grappling": 75,
+            "tdd": 70,
+            "sub_off": 80,
+            "sub_def": 75,
+            "chin": 98,
+            "cardio": 95
+        },
+        "traits": [
+            "Finisher",
+            "Dog",
+            "Iron Chin"
+        ],
+        "record": {
+            "wins": 29,
+            "losses": 5,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 91,
+        "age": 28
+    },
+    {
+        "id": 68,
+        "name": "Cub Swanson",
+        "nickname": "Killer",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 70,
+            "tdd": 75,
+            "sub_off": 60,
+            "sub_def": 75,
+            "chin": 90,
+            "cardio": 88
+        },
+        "traits": [
+            "Head Hunter",
+            "Volume Striker"
+        ],
+        "record": {
+            "wins": 18,
+            "losses": 5,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 81,
+        "age": 29
+    },
+    {
+        "id": 79,
+        "name": "Urijah Faber",
+        "nickname": "The California Kid",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 82,
+            "grappling": 90,
+            "tdd": 90,
+            "sub_off": 88,
+            "sub_def": 90,
+            "chin": 90,
+            "cardio": 92
+        },
+        "traits": [
+            "Guillotine King",
+            "Company Man"
+        ],
+        "record": {
+            "wins": 26,
+            "losses": 5,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 91,
+        "age": 33
+    },
+    {
+        "id": 88,
+        "name": "Joseph Benavidez",
+        "nickname": "Joe Jitsu",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 88,
+            "tdd": 85,
+            "sub_off": 88,
+            "sub_def": 85,
+            "chin": 88,
+            "cardio": 95
+        },
+        "traits": [
+            "Guillotine King",
+            "Volume Striker"
+        ],
+        "record": {
+            "wins": 16,
+            "losses": 3,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 84,
+        "age": 28
+    },
+    {
+        "id": 100,
+        "name": "Diego Sanchez",
+        "nickname": "The Nightmare",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 85,
+            "tdd": 80,
+            "sub_off": 75,
+            "sub_def": 85,
+            "chin": 95,
+            "cardio": 95
+        },
+        "traits": [
+            "Dog",
+            "Showman",
+            "Iron Chin"
+        ],
+        "record": {
+            "wins": 23,
+            "losses": 5,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 86,
+        "age": 31
+    },
+    {
+        "id": 9,
+        "name": "Antonio Silva",
+        "nickname": "Bigfoot",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 85,
+            "tdd": 75,
+            "sub_off": 70,
+            "sub_def": 70,
+            "chin": 80,
+            "cardio": 70
+        },
+        "traits": [
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 17,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 85,
+        "age": 33
+    },
+    {
+        "id": 15,
+        "name": "Dan Henderson",
+        "nickname": "Hendo",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 88,
+            "tdd": 85,
+            "sub_off": 50,
+            "sub_def": 80,
+            "chin": 99,
+            "cardio": 75
+        },
+        "traits": [
+            "Power Puncher",
+            "Iron Chin"
+        ],
+        "record": {
+            "wins": 29,
+            "losses": 8,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 93,
+        "age": 42
+    },
+    {
+        "id": 26,
+        "name": "Michael Bisping",
+        "nickname": "The Count",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 75,
+            "tdd": 88,
+            "sub_off": 50,
+            "sub_def": 85,
+            "chin": 88,
+            "cardio": 99
+        },
+        "traits": [
+            "Volume Striker",
+            "Cardio Machine",
+            "Company Man"
+        ],
+        "record": {
+            "wins": 23,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 92,
+        "age": 33
+    },
+    {
+        "id": 42,
+        "name": "Jake Ellenberger",
+        "nickname": "The Juggernaut",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 85,
+            "tdd": 88,
+            "sub_off": 60,
+            "sub_def": 80,
+            "chin": 84,
+            "cardio": 80
+        },
+        "traits": [
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 28,
+            "losses": 7,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 80,
+        "age": 27
+    },
+    {
+        "id": 76,
+        "name": "Mark Hominick",
+        "nickname": "The Machine",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 65,
+            "tdd": 70,
+            "sub_off": 60,
+            "sub_def": 70,
+            "chin": 80,
+            "cardio": 85
+        },
+        "traits": [
+            "Volume Striker"
+        ],
+        "record": {
+            "wins": 20,
+            "losses": 11,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 77,
+        "age": 30
+    },
+    {
+        "id": 82,
+        "name": "Brad Pickett",
+        "nickname": "One Punch",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 80,
+            "tdd": 75,
+            "sub_off": 70,
+            "sub_def": 80,
+            "chin": 85,
+            "cardio": 85
+        },
+        "traits": [
+            "Dog",
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 22,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 78,
+        "age": 34
+    },
+    {
+        "id": 92,
+        "name": "Jussier Formiga",
+        "nickname": "",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 70,
+            "grappling": 95,
+            "tdd": 80,
+            "sub_off": 95,
+            "sub_def": 90,
+            "chin": 80,
+            "cardio": 85
+        },
+        "traits": [
+            "RNC Specialist",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 14,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 70,
+        "age": 27
+    },
+    {
+        "id": 56,
+        "name": "Gilbert Melendez",
+        "nickname": "El Nino",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 85,
+            "tdd": 90,
+            "sub_off": 60,
+            "sub_def": 85,
+            "chin": 95,
+            "cardio": 95
+        },
+        "traits": [
+            "Volume Striker",
+            "Iron Chin"
+        ],
+        "record": {
+            "wins": 21,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 87,
+        "age": 30
+    },
+    {
+        "id": 58,
+        "name": "Jim Miller",
+        "nickname": "",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 82,
+            "grappling": 90,
+            "tdd": 80,
+            "sub_off": 92,
+            "sub_def": 90,
+            "chin": 92,
+            "cardio": 90
+        },
+        "traits": [
+            "Dog",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 21,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 83,
+        "age": 29
+    },
+    {
+        "id": 5,
+        "name": "Fabricio Werdum",
+        "nickname": "Vai Cavalo",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 99,
+            "tdd": 75,
+            "sub_off": 99,
+            "sub_def": 99,
+            "chin": 90,
+            "cardio": 85
+        },
+        "traits": [
+            "Submission Magician",
+            "Triangle Master"
+        ],
+        "record": {
+            "wins": 16,
+            "losses": 5,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 88,
+        "age": 35
+    },
+    {
+        "id": 24,
+        "name": "Chael Sonnen",
+        "nickname": "The American Gangster",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 75,
+            "grappling": 94,
+            "tdd": 90,
+            "sub_off": 60,
+            "sub_def": 50,
+            "chin": 85,
+            "cardio": 95
+        },
+        "traits": [
+            "Wrestler",
+            "Wet Blanket",
+            "Showman"
+        ],
+        "record": {
+            "wins": 27,
+            "losses": 12,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 94,
+        "age": 35
+    },
+    {
+        "id": 27,
+        "name": "Vitor Belfort",
+        "nickname": "The Phenom",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 95,
+            "grappling": 75,
+            "tdd": 80,
+            "sub_off": 65,
+            "sub_def": 75,
+            "chin": 85,
+            "cardio": 75
+        },
+        "traits": [
+            "Fast Starter",
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 21,
+            "losses": 10,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 91,
+        "age": 35
+    },
+    {
+        "id": 39,
+        "name": "Nick Diaz",
+        "nickname": "",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 88,
+            "tdd": 75,
+            "sub_off": 90,
+            "sub_def": 85,
+            "chin": 99,
+            "cardio": 99
+        },
+        "traits": [
+            "Volume Striker",
+            "Triangle Master",
+            "Trouble Maker"
+        ],
+        "record": {
+            "wins": 26,
+            "losses": 9,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 93,
+        "age": 29
+    },
+    {
+        "id": 67,
+        "name": "Chad Mendes",
+        "nickname": "Money",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 95,
+            "tdd": 95,
+            "sub_off": 60,
+            "sub_def": 85,
+            "chin": 90,
+            "cardio": 90
+        },
+        "traits": [
+            "Fast Starter",
+            "Wrestler"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 84,
+        "age": 27
+    },
+    {
+        "id": 84,
+        "name": "Raphael Assuncao",
+        "nickname": "",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 90,
+            "tdd": 85,
+            "sub_off": 85,
+            "sub_def": 90,
+            "chin": 88,
+            "cardio": 90
+        },
+        "traits": [
+            "Sniper",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 18,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 79,
+        "age": 30
+    },
+    {
+        "id": 90,
+        "name": "John Dodson",
+        "nickname": "The Magician",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 75,
+            "tdd": 92,
+            "sub_off": 60,
+            "sub_def": 85,
+            "chin": 90,
+            "cardio": 90
+        },
+        "traits": [
+            "Fast Starter",
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 14,
+            "losses": 5,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 28
+    },
+    {
+        "id": 7,
+        "name": "Roy Nelson",
+        "nickname": "Big Country",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 80,
+            "tdd": 60,
+            "sub_off": 60,
+            "sub_def": 80,
+            "chin": 99,
+            "cardio": 70
+        },
+        "traits": [
+            "Iron Chin",
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 17,
+            "losses": 7,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 89,
+        "age": 36
+    },
+    {
+        "id": 17,
+        "name": "Mauricio Rua",
+        "nickname": "Shogun",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 94,
+            "grappling": 80,
+            "tdd": 80,
+            "sub_off": 75,
+            "sub_def": 80,
+            "chin": 85,
+            "cardio": 80
+        },
+        "traits": [
+            "Leg Kicker",
+            "Dog"
+        ],
+        "record": {
+            "wins": 21,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 94,
+        "age": 31
+    },
+    {
+        "id": 32,
+        "name": "Alan Belcher",
+        "nickname": "The Talent",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 86,
+            "grappling": 80,
+            "tdd": 80,
+            "sub_off": 85,
+            "sub_def": 80,
+            "chin": 88,
+            "cardio": 85
+        },
+        "traits": [
+            "Volume Striker"
+        ],
+        "record": {
+            "wins": 18,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 78,
+        "age": 28
+    },
+    {
+        "id": 51,
+        "name": "Jon Fitch",
+        "nickname": "",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 75,
+            "grappling": 95,
+            "tdd": 90,
+            "sub_off": 60,
+            "sub_def": 90,
+            "chin": 92,
+            "cardio": 95
+        },
+        "traits": [
+            "Wrestler",
+            "Wet Blanket"
+        ],
+        "record": {
+            "wins": 25,
+            "losses": 4,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 86,
+        "age": 34
+    },
+    {
+        "id": 61,
+        "name": "Joe Lauzon",
+        "nickname": "J-Lau",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 92,
+            "tdd": 70,
+            "sub_off": 95,
+            "sub_def": 85,
+            "chin": 85,
+            "cardio": 80
+        },
+        "traits": [
+            "Finisher",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 22,
+            "losses": 8,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 81,
+        "age": 28
+    },
+    {
+        "id": 71,
+        "name": "Ricardo Lamas",
+        "nickname": "The Bully",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 90,
+            "tdd": 85,
+            "sub_off": 80,
+            "sub_def": 85,
+            "chin": 90,
+            "cardio": 88
+        },
+        "traits": [
+            "Wrestler"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 79,
+        "age": 30
+    },
+    {
+        "id": 81,
+        "name": "Eddie Wineland",
+        "nickname": "",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 70,
+            "tdd": 85,
+            "sub_off": 50,
+            "sub_def": 80,
+            "chin": 90,
+            "cardio": 85
+        },
+        "traits": [
+            "Head Hunter"
+        ],
+        "record": {
+            "wins": 19,
+            "losses": 8,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 77,
+        "age": 28
+    },
+    {
+        "id": 96,
+        "name": "Chris Cariaso",
+        "nickname": "Kamikaze",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 84,
+            "grappling": 70,
+            "tdd": 75,
+            "sub_off": 60,
+            "sub_def": 75,
+            "chin": 85,
+            "cardio": 88
+        },
+        "traits": [
+            "Volume Striker"
+        ],
+        "record": {
+            "wins": 14,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 73,
+        "age": 31
+    },
+    {
+        "id": 4,
+        "name": "Frank Mir",
+        "nickname": "",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 96,
+            "tdd": 60,
+            "sub_off": 99,
+            "sub_def": 90,
+            "chin": 80,
+            "cardio": 75
+        },
+        "traits": [
+            "Submission Magician",
+            "Arm Hunter"
+        ],
+        "record": {
+            "wins": 16,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 90,
+        "age": 33
+    },
+    {
+        "id": 20,
+        "name": "Glover Teixeira",
+        "nickname": "",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 90,
+            "tdd": 85,
+            "sub_off": 88,
+            "sub_def": 90,
+            "chin": 94,
+            "cardio": 88
+        },
+        "traits": [
+            "Power Puncher",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 19,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 84,
+        "age": 33
+    },
+    {
+        "id": 36,
+        "name": "Ronaldo Souza",
+        "nickname": "Jacare",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 99,
+            "tdd": 90,
+            "sub_off": 99,
+            "sub_def": 99,
+            "chin": 90,
+            "cardio": 85
+        },
+        "traits": [
+            "Submission Magician",
+            "Arm Hunter"
+        ],
+        "record": {
+            "wins": 16,
+            "losses": 3,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 86,
+        "age": 33
+    },
+    {
+        "id": 43,
+        "name": "Martin Kampmann",
+        "nickname": "Hitman",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 87,
+            "grappling": 80,
+            "tdd": 80,
+            "sub_off": 85,
+            "sub_def": 85,
+            "chin": 79,
+            "cardio": 88
+        },
+        "traits": [
+            "Dog",
+            "Guillotine King"
+        ],
+        "record": {
+            "wins": 20,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 30
+    },
+    {
+        "id": 63,
+        "name": "Khabib Nurmagomedov",
+        "nickname": "The Eagle",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 70,
+            "grappling": 96,
+            "tdd": 95,
+            "sub_off": 85,
+            "sub_def": 95,
+            "chin": 95,
+            "cardio": 95
+        },
+        "traits": [
+            "Wrestler",
+            "Wet Blanket",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 19,
+            "losses": 0,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 79,
+        "age": 24
+    },
+    {
+        "id": 69,
+        "name": "Chan Sung Jung",
+        "nickname": "The Korean Zombie",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 88,
+            "tdd": 75,
+            "sub_off": 94,
+            "sub_def": 85,
+            "chin": 98,
+            "cardio": 90
+        },
+        "traits": [
+            "Iron Chin",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 3,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 83,
+        "age": 25
+    },
+    {
+        "id": 80,
+        "name": "Michael McDonald",
+        "nickname": "Mayday",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 75,
+            "tdd": 80,
+            "sub_off": 70,
+            "sub_def": 80,
+            "chin": 88,
+            "cardio": 85
+        },
+        "traits": [
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 15,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 77,
+        "age": 21
+    },
+    {
+        "id": 91,
+        "name": "John Moraga",
+        "nickname": "",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 82,
+            "grappling": 80,
+            "tdd": 75,
+            "sub_off": 85,
+            "sub_def": 80,
+            "chin": 85,
+            "cardio": 88
+        },
+        "traits": [
+            "Guillotine King"
+        ],
+        "record": {
+            "wins": 11,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 74,
+        "age": 28
+    },
+    {
+        "id": 14,
+        "name": "Rashad Evans",
+        "nickname": "Suga",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 94,
+            "tdd": 95,
+            "sub_off": 60,
+            "sub_def": 85,
+            "chin": 88,
+            "cardio": 90
+        },
+        "traits": [
+            "Wrestler",
+            "Fast Starter"
+        ],
+        "record": {
+            "wins": 17,
+            "losses": 2,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 92,
+        "age": 33
+    },
+    {
+        "id": 31,
+        "name": "Tim Boetsch",
+        "nickname": "The Barbarian",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 82,
+            "grappling": 80,
+            "tdd": 75,
+            "sub_off": 50,
+            "sub_def": 75,
+            "chin": 92,
+            "cardio": 80
+        },
+        "traits": [
+            "Dog",
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 16,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 79,
+        "age": 31
+    },
+    {
+        "id": 49,
+        "name": "Robbie Lawler",
+        "nickname": "Ruthless",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 70,
+            "tdd": 88,
+            "sub_off": 40,
+            "sub_def": 80,
+            "chin": 95,
+            "cardio": 85
+        },
+        "traits": [
+            "Power Puncher",
+            "Dog",
+            "Iron Chin"
+        ],
+        "record": {
+            "wins": 20,
+            "losses": 9,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 88,
+        "age": 30
+    },
+    {
+        "id": 57,
+        "name": "Donald Cerrone",
+        "nickname": "Cowboy",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 91,
+            "grappling": 75,
+            "tdd": 75,
+            "sub_off": 85,
+            "sub_def": 80,
+            "chin": 85,
+            "cardio": 90
+        },
+        "traits": [
+            "Volume Striker",
+            "Head Hunter",
+            "Company Man"
+        ],
+        "record": {
+            "wins": 19,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 86,
+        "age": 29
+    },
+    {
+        "id": 70,
+        "name": "Dustin Poirier",
+        "nickname": "The Diamond",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 80,
+            "tdd": 75,
+            "sub_off": 85,
+            "sub_def": 80,
+            "chin": 88,
+            "cardio": 88
+        },
+        "traits": [
+            "Volume Striker",
+            "Guillotine King"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 80,
+        "age": 23
+    },
+    {
+        "id": 85,
+        "name": "Scott Jorgensen",
+        "nickname": "Young Guns",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 78,
+            "grappling": 88,
+            "tdd": 85,
+            "sub_off": 70,
+            "sub_def": 85,
+            "chin": 90,
+            "cardio": 90
+        },
+        "traits": [
+            "Wrestler"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 76,
+        "age": 30
+    },
+    {
+        "id": 89,
+        "name": "Ian McCall",
+        "nickname": "Uncle Creepy",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 85,
+            "tdd": 85,
+            "sub_off": 75,
+            "sub_def": 85,
+            "chin": 90,
+            "cardio": 92
+        },
+        "traits": [
+            "Showman"
+        ],
+        "record": {
+            "wins": 11,
+            "losses": 3,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 78,
+        "age": 28
+    },
+    {
+        "id": 97,
+        "name": "Travis Browne",
+        "nickname": "Hapa",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 70,
+            "tdd": 80,
+            "sub_off": 60,
+            "sub_def": 75,
+            "chin": 85,
+            "cardio": 80
+        },
+        "traits": [
+            "Glass Cannon"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 1,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 30
+    },
+    {
+        "id": 11,
+        "name": "Shane Carwin",
+        "nickname": "",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 94,
+            "grappling": 85,
+            "tdd": 85,
+            "sub_off": 60,
+            "sub_def": 75,
+            "chin": 85,
+            "cardio": 60
+        },
+        "traits": [
+            "Power Puncher",
+            "Fast Starter"
+        ],
+        "record": {
+            "wins": 12,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 88,
+        "age": 37
+    },
+    {
+        "id": 16,
+        "name": "Lyoto Machida",
+        "nickname": "The Dragon",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 95,
+            "grappling": 70,
+            "tdd": 95,
+            "sub_off": 60,
+            "sub_def": 80,
+            "chin": 88,
+            "cardio": 90
+        },
+        "traits": [
+            "Sniper",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 18,
+            "losses": 3,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 93,
+        "age": 34
+    },
+    {
+        "id": 46,
+        "name": "Thiago Alves",
+        "nickname": "Pitbull",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 65,
+            "tdd": 85,
+            "sub_off": 50,
+            "sub_def": 70,
+            "chin": 85,
+            "cardio": 80
+        },
+        "traits": [
+            "Leg Kicker",
+            "Head Hunter"
+        ],
+        "record": {
+            "wins": 19,
+            "losses": 10,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 81,
+        "age": 29
+    },
+    {
+        "id": 62,
+        "name": "Rafael dos Anjos",
+        "nickname": "RDA",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 90,
+            "tdd": 85,
+            "sub_off": 88,
+            "sub_def": 90,
+            "chin": 90,
+            "cardio": 90
+        },
+        "traits": [
+            "Pressure",
+            "Leg Kicker"
+        ],
+        "record": {
+            "wins": 18,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 28
+    },
+    {
+        "id": 72,
+        "name": "Erik Koch",
+        "nickname": "New Breed",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 70,
+            "tdd": 80,
+            "sub_off": 70,
+            "sub_def": 80,
+            "chin": 85,
+            "cardio": 85
+        },
+        "traits": [
+            "Sniper",
+            "Head Hunter"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 76,
+        "age": 24
+    },
+    {
+        "id": 86,
+        "name": "Brian Bowles",
+        "nickname": "",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 80,
+            "tdd": 80,
+            "sub_off": 80,
+            "sub_def": 80,
+            "chin": 85,
+            "cardio": 80
+        },
+        "traits": [
+            "Power Puncher",
+            "Guillotine King"
+        ],
+        "record": {
+            "wins": 10,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 80,
+        "age": 32
+    },
+    {
+        "id": 94,
+        "name": "Tim Elliott",
+        "nickname": "",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 78,
+            "grappling": 82,
+            "tdd": 80,
+            "sub_off": 75,
+            "sub_def": 85,
+            "chin": 88,
+            "cardio": 92
+        },
+        "traits": [
+            "Showman"
+        ],
+        "record": {
+            "wins": 8,
+            "losses": 3,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 70,
+        "age": 26
+    },
+    {
+        "id": 99,
+        "name": "Rousimar Palhares",
+        "nickname": "Toquinho",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 70,
+            "grappling": 98,
+            "tdd": 80,
+            "sub_off": 99,
+            "sub_def": 85,
+            "chin": 80,
+            "cardio": 70
+        },
+        "traits": [
+            "Leg Lock Specialist",
+            "Dirty Fighter"
+        ],
+        "record": {
+            "wins": 14,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 83,
+        "age": 32
+    },
+    {
+        "id": 12,
+        "name": "Gabriel Gonzaga",
+        "nickname": "Napao",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 90,
+            "tdd": 75,
+            "sub_off": 85,
+            "sub_def": 80,
+            "chin": 75,
+            "cardio": 70
+        },
+        "traits": [
+            "Head Hunter"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 81,
+        "age": 33
+    },
+    {
+        "id": 23,
+        "name": "Forrest Griffin",
+        "nickname": "",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 80,
+            "tdd": 75,
+            "sub_off": 75,
+            "sub_def": 80,
+            "chin": 80,
+            "cardio": 90
+        },
+        "traits": [
+            "Dog",
+            "Volume Striker"
+        ],
+        "record": {
+            "wins": 19,
+            "losses": 7,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 91,
+        "age": 33
+    },
+    {
+        "id": 29,
+        "name": "Mark Munoz",
+        "nickname": "The Filipino Wrecking Machine",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 92,
+            "tdd": 85,
+            "sub_off": 50,
+            "sub_def": 75,
+            "chin": 85,
+            "cardio": 85
+        },
+        "traits": [
+            "Wrestler",
+            "Power Puncher"
+        ],
+        "record": {
+            "wins": 12,
+            "losses": 3,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 34
+    },
+    {
+        "id": 44,
+        "name": "Josh Koscheck",
+        "nickname": "Kos",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 92,
+            "tdd": 90,
+            "sub_off": 50,
+            "sub_def": 80,
+            "chin": 85,
+            "cardio": 85
+        },
+        "traits": [
+            "Wrestler",
+            "Wet Blanket"
+        ],
+        "record": {
+            "wins": 18,
+            "losses": 6,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 88,
+        "age": 35
+    },
+    {
+        "id": 55,
+        "name": "Anthony Pettis",
+        "nickname": "Showtime",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 94,
+            "grappling": 75,
+            "tdd": 80,
+            "sub_off": 88,
+            "sub_def": 80,
+            "chin": 90,
+            "cardio": 88
+        },
+        "traits": [
+            "Head Hunter",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 15,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 88,
+        "age": 25
+    },
+    {
+        "id": 75,
+        "name": "Conor McGregor",
+        "nickname": "Notorious",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 94,
+            "grappling": 60,
+            "tdd": 65,
+            "sub_off": 50,
+            "sub_def": 60,
+            "chin": 90,
+            "cardio": 75
+        },
+        "traits": [
+            "Sniper",
+            "Fast Starter",
+            "Showman"
+        ],
+        "record": {
+            "wins": 12,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 75,
+        "age": 24
+    },
+    {
+        "id": 83,
+        "name": "TJ Dillashaw",
+        "nickname": "",
+        "weight_class": "Bantamweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 88,
+            "tdd": 85,
+            "sub_off": 75,
+            "sub_def": 85,
+            "chin": 88,
+            "cardio": 90
+        },
+        "traits": [
+            "Volume Striker",
+            "Head Hunter"
+        ],
+        "record": {
+            "wins": 6,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 72,
+        "age": 26
+    },
+    {
+        "id": 95,
+        "name": "Louis Gaudinot",
+        "nickname": "Green Hair",
+        "weight_class": "Flyweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 75,
+            "tdd": 70,
+            "sub_off": 80,
+            "sub_def": 75,
+            "chin": 80,
+            "cardio": 85
+        },
+        "traits": [
+            "Showman"
+        ],
+        "record": {
+            "wins": 6,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 68,
+        "age": 28
+    },
+    {
+        "id": 6,
+        "name": "Daniel Cormier",
+        "nickname": "DC",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 98,
+            "tdd": 99,
+            "sub_off": 75,
+            "sub_def": 95,
+            "chin": 95,
+            "cardio": 92
+        },
+        "traits": [
+            "Wrestler",
+            "Wet Blanket",
+            "Company Man"
+        ],
+        "record": {
+            "wins": 10,
+            "losses": 0,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 89,
+        "age": 33
+    },
+    {
+        "id": 18,
+        "name": "Alexander Gustafsson",
+        "nickname": "The Mauler",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 93,
+            "grappling": 75,
+            "tdd": 90,
+            "sub_off": 60,
+            "sub_def": 80,
+            "chin": 92,
+            "cardio": 90
+        },
+        "traits": [
+            "Volume Striker",
+            "Sniper"
+        ],
+        "record": {
+            "wins": 14,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 87,
+        "age": 25
+    },
+    {
+        "id": 35,
+        "name": "Luke Rockhold",
+        "nickname": "",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 88,
+            "tdd": 85,
+            "sub_off": 85,
+            "sub_def": 85,
+            "chin": 88,
+            "cardio": 90
+        },
+        "traits": [
+            "Leg Kicker",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 10,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 83,
+        "age": 28
+    },
+    {
+        "id": 45,
+        "name": "Demian Maia",
+        "nickname": "",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 70,
+            "grappling": 98,
+            "tdd": 85,
+            "sub_off": 99,
+            "sub_def": 95,
+            "chin": 90,
+            "cardio": 90
+        },
+        "traits": [
+            "RNC Specialist",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 17,
+            "losses": 4,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 89,
+        "age": 35
+    },
+    {
+        "id": 54,
+        "name": "Nate Diaz",
+        "nickname": "",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 89,
+            "grappling": 88,
+            "tdd": 65,
+            "sub_off": 94,
+            "sub_def": 85,
+            "chin": 98,
+            "cardio": 99
+        },
+        "traits": [
+            "Volume Striker",
+            "Triangle Master",
+            "Trouble Maker"
+        ],
+        "record": {
+            "wins": 16,
+            "losses": 8,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 89,
+        "age": 27
+    },
+    {
+        "id": 74,
+        "name": "Max Holloway",
+        "nickname": "Blessed",
+        "weight_class": "Featherweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 65,
+            "tdd": 75,
+            "sub_off": 60,
+            "sub_def": 75,
+            "chin": 95,
+            "cardio": 90
+        },
+        "traits": [
+            "Volume Striker",
+            "Iron Chin"
+        ],
+        "record": {
+            "wins": 4,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 70,
+        "age": 21
+    },
+    {
+        "id": 2,
+        "name": "Cain Velasquez",
+        "nickname": "",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 92,
+            "grappling": 98,
+            "tdd": 95,
+            "sub_off": 70,
+            "sub_def": 85,
+            "chin": 88,
+            "cardio": 99
+        },
+        "traits": [
+            "Cardio Machine",
+            "Wrestler",
+            "Volume Striker"
+        ],
+        "record": {
+            "wins": 10,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 93,
+        "age": 30
+    },
+    {
+        "id": 21,
+        "name": "Ryan Bader",
+        "nickname": "Darth",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 92,
+            "tdd": 90,
+            "sub_off": 70,
+            "sub_def": 80,
+            "chin": 85,
+            "cardio": 88
+        },
+        "traits": [
+            "Wrestler",
+            "Company Man"
+        ],
+        "record": {
+            "wins": 14,
+            "losses": 3,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 29
+    },
+    {
+        "id": 30,
+        "name": "Brian Stann",
+        "nickname": "All American",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 65,
+            "tdd": 75,
+            "sub_off": 40,
+            "sub_def": 70,
+            "chin": 90,
+            "cardio": 85
+        },
+        "traits": [
+            "Power Puncher",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 12,
+            "losses": 5,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 81,
+        "age": 32
+    },
+    {
+        "id": 40,
+        "name": "Johny Hendricks",
+        "nickname": "Bigg Rigg",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 90,
+            "grappling": 94,
+            "tdd": 92,
+            "sub_off": 60,
+            "sub_def": 80,
+            "chin": 95,
+            "cardio": 85
+        },
+        "traits": [
+            "Power Puncher",
+            "Wrestler"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 85,
+        "age": 29
+    },
+    {
+        "id": 53,
+        "name": "Frankie Edgar",
+        "nickname": "The Answer",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 89,
+            "grappling": 85,
+            "tdd": 90,
+            "sub_off": 60,
+            "sub_def": 90,
+            "chin": 95,
+            "cardio": 99
+        },
+        "traits": [
+            "Dog",
+            "Cardio Machine",
+            "Volume Striker"
+        ],
+        "record": {
+            "wins": 14,
+            "losses": 3,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 89,
+        "age": 31
+    },
+    {
+        "id": 8,
+        "name": "Mark Hunt",
+        "nickname": "Super Samoan",
+        "weight_class": "Heavyweight",
+        "stats": {
+            "striking": 93,
+            "grappling": 50,
+            "tdd": 75,
+            "sub_off": 40,
+            "sub_def": 70,
+            "chin": 99,
+            "cardio": 75
+        },
+        "traits": [
+            "Iron Chin",
+            "Power Puncher",
+            "Finisher"
+        ],
+        "record": {
+            "wins": 8,
+            "losses": 7,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 87,
+        "age": 38
+    },
+    {
+        "id": 22,
+        "name": "Phil Davis",
+        "nickname": "Mr Wonderful",
+        "weight_class": "Light Heavyweight",
+        "stats": {
+            "striking": 75,
+            "grappling": 95,
+            "tdd": 95,
+            "sub_off": 85,
+            "sub_def": 90,
+            "chin": 90,
+            "cardio": 92
+        },
+        "traits": [
+            "Wrestler",
+            "Submission Magician"
+        ],
+        "record": {
+            "wins": 10,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 83,
+        "age": 28
+    },
+    {
+        "id": 28,
+        "name": "Chris Weidman",
+        "nickname": "All-American",
+        "weight_class": "Middleweight",
+        "stats": {
+            "striking": 85,
+            "grappling": 93,
+            "tdd": 90,
+            "sub_off": 85,
+            "sub_def": 88,
+            "chin": 90,
+            "cardio": 88
+        },
+        "traits": [
+            "Wrestler",
+            "Clean Cut"
+        ],
+        "record": {
+            "wins": 9,
+            "losses": 0,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 84,
+        "age": 28
+    },
+    {
+        "id": 41,
+        "name": "Rory MacDonald",
+        "nickname": "Ares",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 90,
+            "tdd": 90,
+            "sub_off": 80,
+            "sub_def": 88,
+            "chin": 89,
+            "cardio": 90
+        },
+        "traits": [
+            "Sniper",
+            "Well Rounded"
+        ],
+        "record": {
+            "wins": 13,
+            "losses": 2,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 23
+    },
+    {
+        "id": 59,
+        "name": "Gray Maynard",
+        "nickname": "The Bully",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 80,
+            "grappling": 95,
+            "tdd": 95,
+            "sub_off": 50,
+            "sub_def": 90,
+            "chin": 80,
+            "cardio": 85
+        },
+        "traits": [
+            "Wrestler",
+            "Wet Blanket"
+        ],
+        "record": {
+            "wins": 11,
+            "losses": 1,
+            "draws": 1
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 84,
+        "age": 33
+    },
+    {
+        "id": 47,
+        "name": "Matt Brown",
+        "nickname": "The Immortal",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 86,
+            "grappling": 60,
+            "tdd": 70,
+            "sub_off": 60,
+            "sub_def": 75,
+            "chin": 92,
+            "cardio": 90
+        },
+        "traits": [
+            "Dog",
+            "Finisher"
+        ],
+        "record": {
+            "wins": 17,
+            "losses": 11,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 79,
+        "age": 31
+    },
+    {
+        "id": 64,
+        "name": "Michael Chandler",
+        "nickname": "Iron",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 90,
+            "tdd": 90,
+            "sub_off": 75,
+            "sub_def": 85,
+            "chin": 87,
+            "cardio": 92
+        },
+        "traits": [
+            "Power Puncher",
+            "Wrestler"
+        ],
+        "record": {
+            "wins": 10,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 80,
+        "age": 26
+    },
+    {
+        "id": 48,
+        "name": "Tyron Woodley",
+        "nickname": "The Chosen One",
+        "weight_class": "Welterweight",
+        "stats": {
+            "striking": 88,
+            "grappling": 92,
+            "tdd": 98,
+            "sub_off": 50,
+            "sub_def": 80,
+            "chin": 90,
+            "cardio": 75
+        },
+        "traits": [
+            "Power Puncher",
+            "Wrestler"
+        ],
+        "record": {
+            "wins": 10,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 81,
+        "age": 30
+    },
+    {
+        "id": 65,
+        "name": "Edson Barboza",
+        "nickname": "Junior",
+        "weight_class": "Lightweight",
+        "stats": {
+            "striking": 95,
+            "grappling": 65,
+            "tdd": 80,
+            "sub_off": 50,
+            "sub_def": 75,
+            "chin": 80,
+            "cardio": 85
+        },
+        "traits": [
+            "Leg Kicker",
+            "Head Hunter"
+        ],
+        "record": {
+            "wins": 11,
+            "losses": 1,
+            "draws": 0
+        },
+        "is_champion": false,
+        "injury_months": 0,
+        "popularity": 82,
+        "age": 26
+    }
+]
